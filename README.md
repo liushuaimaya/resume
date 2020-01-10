@@ -1,1 +1,1 @@
-# resume
+# just personal static files
