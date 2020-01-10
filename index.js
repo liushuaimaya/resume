@@ -9,15 +9,13 @@ const options = {
   cert: fs.readFileSync("/etc/letsencrypt/live/vuee.me/fullchain.pem")
 };
 
-https.createServer(options, app);
-
 app.use(
   express.static("public", {
     extensions: ["html", "htm"]
   })
 );
 
-app.listen(port);
+https.createServer(options, app).listen(port);
 
 // {
 //   key: fs.readFileSync("/etc/letsencrypt/live/vuee.me/privkey.pem"),
